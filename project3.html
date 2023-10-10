@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Predikat Nilai</title>
+    <!-- css -->
+    <style>
+        body {
+        background: linear-gradient(#002294, #9c1b1b);
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        justify-content: center; 
+        }
+        .tampil{
+        padding: 20px;
+        border: 2px solid #002294;
+        border-radius: 5px;
+        background-color: #633779;
+        color: #3e2263;
+        margin-top: 20px;
+        font-size: 18px;
+        text-align: center;
+        box-shadow: 0 0 50px rgba(238, 226, 226, 0.2);
+        }
+        footer{
+            color: rgb(40, 36, 94);
+            font-size: 20px;
+            font-family:'Times New Roman', Times, serif;
+            margin-top: 30px;
+        }
+        button{
+            background-color: #564161;
+        }
+        #inputNilai{
+            background-color: #564161;
+        }
+        </style>
+</head>
+<body>
+    <div class="tampil">
+    <h1>Predikat Nilai</h1>
+
+    <!-- input -->
+
+    <p>Masukkan nilai Anda (0-100): <input type="number" id="inputNilai" min="0" max="100"></p>
+
+    <!-- button -->
+
+    <button onclick="tentukanPredikat()">Tentukan Predikat</button>
+    <p id="hasil"></p>
+    </div>
+
+    
+    <script>
+
+        // function
+
+        function tentukanPredikat() {
+            var nilai = parseInt(document.getElementById("inputNilai").value);
+            var hasilElemen = document.getElementById("hasil");
+            var predikat;
+
+            // Percabangan
+
+            if (nilai >= 0 && nilai <= 100) {
+                if (nilai >= 90) {
+                    predikat = "A";
+                } else if (nilai >= 80) {
+                    predikat = "B";
+                } else if (nilai >= 70) {
+                    predikat = "C";
+                } else if (nilai >= 60) {
+                    predikat = "D";
+                } else {
+                    predikat = "E";
+                }
+
+                hasilElemen.textContent = "Predikat nilai Anda adalah: " + predikat;
+            } else {
+                hasilElemen.textContent = "Masukkan nilai antara 0 hingga 100.";
+            }
+        }
+    </script>
+</body>
+</html>
