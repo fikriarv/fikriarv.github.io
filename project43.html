@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>textContent</title>
+</head>
+<body>
+  <h1>Text</h1>
+  
+  <p id="teksElemen">Bissmillah</p>
+  <button onclick="ubahTeksDanWarna()">Ubah Teks dan Warna</button>
+  
+  <script>
+    function ubahTeksDanWarna() {
+      var teksElemen = document.getElementById("teksElemen");
+      
+      // Ubah teks
+      teksElemen.textContent = "Alhamdulillah";
+      
+      // Ubah warna teks
+      teksElemen.style.color = "blue";
+      
+      // Ubah warna latar belakang
+      teksElemen.style.backgroundColor = "bisque";
+    }
+  </script>
+</body>
+</html>
